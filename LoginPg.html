@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="LoginPg.css">
+</head>
+<body onload="typeWriter()">
+  <div id="demo"></div>
+
+<h2> </h2>
+
+<form method="post">
+  <div class="imgcontainer">
+    <img src="https://p.kindpng.com/picc/s/163-1636340_user-avatar-icon-avatar-transparent-user-icon-png.png" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" id="uname" name="uname" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+        
+    <button type="submit" id="submit" onclick="checkValidation()" formtarget="_blank">Login</button>
+  </div>
+</form>
+
+<script type="text/javascript">
+ 
+ function checkValidation(){
+ const uname = document.getElementById("uname");
+ const psw =document.getElementById("psw");
+ if((uname.value=='login123') && (psw.value ==123)){
+  alert("You are authentication user");
+  target.setAttribute("_blank");
+  document.getElementById("demo").innerHTML = "LOGIN NEW PAGE";
+ }
+ else{
+    alert("You are unauthentication user");
+ }
+ }
+
+ var i = 0;
+var txt = ' WELCOME TO LOGIN PAGE !';     
+  
+var speed = 150; 
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("demo").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+</script>
+</body>
+</html>
